@@ -8,6 +8,7 @@ end
 # Testing 123 123 
 # Second Test
 # Third test
+# Fourth test
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
