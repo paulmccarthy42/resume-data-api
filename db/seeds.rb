@@ -17,7 +17,8 @@ Student.create(
   personal_blog_url: "personal_blog_url",
   online_resume_url: "online_resume_url",
   github_url: "github_url",
-  photo: "photo"
+  photo: "photo",
+  password: "password"
 )
 
 Skill.create(
