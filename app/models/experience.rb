@@ -6,7 +6,8 @@ class Experience < ApplicationRecord
     end_date: end_date,
     job_title: job_title,
     company_name: company_name,
-    details: details
+    details: details,
+    student_id: student_id
     }
   end
 end
