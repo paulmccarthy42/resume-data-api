@@ -1,12 +1,12 @@
 class V1::ExperiencesController < ApplicationController
 
   def index
-    experience = Experiences.all 
-    render json: experiences.as_json
+    experience = Experience.all 
+    render json: experience.as_json
   end
 
   def create
-    experience = Experiece.new(
+    experience = Experience.new(
       start_date: params["start_date"],
       end_date: params["end_date"],
       job_title: params["job_title"],
