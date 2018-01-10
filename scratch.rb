@@ -49,7 +49,7 @@ elsif chosen_method == 3 #read
   params[:job_title] = random.sample
   params[:skill_name] = random.sample
   params[:student_id] = 1
-  response = Unirest.get(url + controllers[chosen_controller] + "/" + chosen_id)
+  response = Unirest.get(url + controllers[chosen_controller] + "/" + chosen_id.to_s)
   p response.body  
 
 elsif chosen_method == 4 #update TODO
@@ -59,11 +59,11 @@ elsif chosen_method == 4 #update TODO
   params[:degree] = random.sample
   params[:job_title] = random.sample
   params[:skill_name] = random.sample
-  response = Unirest.patch(url + controllers[chosen_controller] + "/" + chosen_id)
+  response = Unirest.patch(url + controllers[chosen_controller] + "/" + chosen_id.to_s)
   p response.body
 
 elsif chosen_method == 5 #destroy
-  response = Unirest.delete(url + controllers[chosen_controller] + "/" + chosen_id)
+  response = Unirest.delete(url + controllers[chosen_controller] + "/" + chosen_id.to_s)
   p response.body
 end
 
