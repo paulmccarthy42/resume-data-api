@@ -21,10 +21,10 @@ class Student < ApplicationRecord
       online_resume_url: online_resume_url,
       github_url: github_url,
       photo: photo,
-      experiences: experiences,
-      educations: educations,
-      skills: skills,
-      capstones: capstones
+      experiences: experiences.as_json,
+      educations: educations.as_json,
+      skills: skills.as_json,
+      capstones: capstones.as_json
     }
 
   end
