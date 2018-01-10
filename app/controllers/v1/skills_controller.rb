@@ -25,8 +25,8 @@ class V1::SkillsController < ApplicationController
     skill_id = params["id"]
     skill = Skill.find_by(id: skill_id)
     skill.skill_name = params["skill_name"] || skill.skill_name
-    if student.save
-      render json: student.as_json
+    if skill.save
+      render json: skill.as_json
     else
       render json: {error: skill.errors.full_messages}, status: :bad_request
     end
