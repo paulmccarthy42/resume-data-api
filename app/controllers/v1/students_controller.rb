@@ -16,7 +16,9 @@ class V1::StudentsController < ApplicationController
       personal_blog_url: params["personal_blog_url"],
       online_resume_url: params["online_resume_url"],
       github_url: params["github_url"],
-      photo: params["photo"]
+      photo: params["photo"],
+      password: params["password"], 
+      password_confirmation: params["password_confirmation"]
       )
     if student.save
       render json: student.as_json 
