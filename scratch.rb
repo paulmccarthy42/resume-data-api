@@ -38,10 +38,6 @@ if chosen_method == 1 #index
   p response.body 
 
 elsif chosen_method == 2 #create TODO
-  response = Unirest.post(url + controllers[chosen_controller])
-  p response.body 
-
-elsif chosen_method == 3 #read 
   params = {}
   params[:first_name] = random.sample
   params[:name] = random.sample
@@ -49,21 +45,25 @@ elsif chosen_method == 3 #read
   params[:job_title] = random.sample
   params[:skill_name] = random.sample
   params[:student_id] = 1
-  response = Unirest.get(url + controllers[chosen_controller] + "/" + chosen_id.to_s)
+  response = Unirest.post(url + controllers[chosen_controller])
+  p response.body 
+
+elsif chosen_method == 3 #read 
+  response = Unirest.get(url + controllers[chosen_controller] + "/#{chosen_id}")
   p response.body  
 
 elsif chosen_method == 4 #update TODO
-  params = []
+  params = {}
   params[:first_name] = random.sample
   params[:name] = random.sample
   params[:degree] = random.sample
   params[:job_title] = random.sample
   params[:skill_name] = random.sample
-  response = Unirest.patch(url + controllers[chosen_controller] + "/" + chosen_id.to_s)
+  response = Unirest.patch(url + controllers[chosen_controller] + "/#{chosen_id}")
   p response.body
 
 elsif chosen_method == 5 #destroy
-  response = Unirest.delete(url + controllers[chosen_controller] + "/" + chosen_id.to_s)
+  response = Unirest.delete(url + controllers[chosen_controller] + "/#{chosen_id}")
   p response.body
 end
 
